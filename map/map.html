@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Migration Layer</title>
+    <link rel="stylesheet" href="./lib/leaflet.css" />
+    <style>
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+    #map{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    </div>
+
+    <script src="./lib/leaflet.js"></script>
+    <script src='./src/src.js'></script>
+    <script>
+        var lrmap = L.map('map').setView([40, -90], 4);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png')
+        .addTo(lrmap);
+
+
+         // lat then long
+
+        var circle = L.circle([41.60054, -93.60911], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 1000
+        }).addTo(lrmap);
+
+        circle.bindPopup("<b>Home Base</b>").openPopup();
+        
+        var data = [
+{"from":[114.0683,22.54554],"to":[-93.60911,41.60054],"labels":["795525125 Hangzhou Alibaba Advertising Co.,Ltd. AS37963",null],"color":"#ff3a31"},{"from":[-81.03481,34.00071],"to":[-93.60911,41.60054],"labels":["2732103143 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[-122.3886,37.7309],"to":[-93.60911,41.60054],"labels":["3334955556 DigitalOcean, LLC AS14061",null],"color":"#ff3a31"},{"from":[106.27306,38.46806],"to":[-93.60911,41.60054],"labels":["2713528850 Ningxia West Cloud Data Technology Co.Ltd. AS135629",null],"color":"#ff3a31"},{"from":[-117.16472,32.71571],"to":[-93.60911,41.60054],"labels":["1123074186 CariNet, Inc. AS10439",null],"color":"#ff3a31"},{"from":[-93.60911,41.60054],"to":[-93.60911,41.60054],"labels":["3453099806 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[9.18951,45.46427],"to":[-93.60911,41.60054],"labels":["3005986898 Private Layer INC AS51852",null],"color":"#ff3a31"},{"from":[16.37208,48.20849],"to":[-93.60911,41.60054],"labels":["3280999736 Cogent Communications AS174",null],"color":"#ff3a31"},{"from":[127.0565,37.2492],"to":[-93.60911,41.60054],"labels":["2948798782 Korea Telecom AS4766",null],"color":"#ff3a31"},{"from":[-81.03481,34.00071],"to":[-93.60911,41.60054],"labels":["2732103007 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[-93.60911,41.60054],"to":[-93.60911,41.60054],"labels":["3453099805 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[-0.12574,51.50853],"to":[-93.60911,41.60054],"labels":["600560200 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[4.34878,50.85045],"to":[-93.60911,41.60054],"labels":["3337296002 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[121.53185,25.04776],"to":[-93.60911,41.60054],"labels":["3337295998 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[-121.8957,37.6873],"to":[-93.60911,41.60054],"labels":["1093730638 Hurricane Electric LLC AS6939",null],"color":"#ff3a31"},{"from":[-74.4569,40.8223],"to":[-93.60911,41.60054],"labels":["760198651 Akamai Connected Cloud AS63949",null],"color":"#ff3a31"},{"from":[114.17469,22.27832],"to":[-93.60911,41.60054],"labels":["148032215 Alibaba (US) Technology Co., Ltd. AS45102",null],"color":"#ff3a31"},{"from":[121.45806,31.22222],"to":[-93.60911,41.60054],"labels":["1981352991 Shenzhen Tencent Computer Systems Company Limited AS45090",null],"color":"#ff3a31"},{"from":[126.8732,37.5813],"to":[-93.60911,41.60054],"labels":["3552641051 Korea Telecom AS4766",null],"color":"#ff3a31"},{"from":[126.9784,37.566],"to":[-93.60911,41.60054],"labels":["2009073691 Korea Telecom AS4766",null],"color":"#ff3a31"},{"from":[128.8228,35.1474],"to":[-93.60911,41.60054],"labels":["2041661156 Korea Telecom AS4766",null],"color":"#ff3a31"},{"from":[-0.12574,51.50853],"to":[-93.60911,41.60054],"labels":["600560583 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[-122.14302,37.44188],"to":[-93.60911,41.60054],"labels":["1077855545 Hurricane Electric LLC AS6939",null],"color":"#ff3a31"},{"from":[-5.17595,50.1189],"to":[-93.60911,41.60054],"labels":["1475129411 INTERNET MEASUREMENT AS211298",null],"color":"#ff3a31"},{"from":[4.57778,51.92917],"to":[-93.60911,41.60054],"labels":["1509467546 IP Volume inc AS202425",null],"color":"#ff3a31"},{"from":[116.39723,39.9075],"to":[-93.60911,41.60054],"labels":["3085362497 China Mobile Communications Group Co., Ltd. AS9808",null],"color":"#ff3a31"},{"from":[-46.63611,-23.5475],"to":[-93.60911,41.60054],"labels":["3453099924 Google LLC AS396982",null],"color":"#ff3a31"},{"from":[37.61556,55.75222],"to":[-93.60911,41.60054],"labels":["1053567283 HORIZON LLC AS59425",null],"color":"#ff3a31"},{"from":[-0.12574,51.50853],"to":[-93.60911,41.60054],"labels":["600560429 Google LLC AS396982",null],"color":"#ff3a31"},        
+        {"from":[126.8732,37.5813],"to":[-93.60911,41.60054],"labels":["3552641051 Korea Telecom AS4766",null],"color":"#2df705"},{"from":[127.0565,37.2492],"to":[-93.60911,41.60054],"labels":["2948798782 Korea Telecom AS4766",null],"color":"#2df705"},{"from":[127.79472,36.81083],"to":[-93.60911,41.60054],"labels":["3552702154 Korea Telecom AS4766",null],"color":"#2df705"},{"from":[126.9784,37.566],"to":[-93.60911,41.60054],"labels":["2009073691 Korea Telecom AS4766",null],"color":"#2df705"},{"from":[128.8228,35.1474],"to":[-93.60911,41.60054],"labels":["2041661156 Korea Telecom AS4766",null],"color":"#2df705"},{"from":[116.39723,39.9075],"to":[-93.60911,41.60054],"labels":["3085362497 China Mobile Communications Group Co., Ltd. AS9808",null],"color":"#2df705"},
+    
+    
+    ];
+
+        var migrationLayer = new L.migrationLayer({
+            map: lrmap,
+            data: data,
+            pulseRadius:30,
+            pulseBorderWidth:2,
+            arcWidth:1,
+            arcLabel:true,
+            arcLabelFont:'14px sans-serif',
+
+            }
+        );
+        migrationLayer.addTo(lrmap);
+
+    </script>
+</body>
+
+</html>
